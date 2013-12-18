@@ -1,0 +1,17 @@
+<ul><%
+_.each(repos['models'], function(repo, i) { 
+%>
+	<li class="repo">
+		<div class="repo_content">
+			<a href="#/repo/<%=repo['attributes']['name']%>" class="left repo_name"><%=repo['attributes']['name']%></a>
+			<ul class="right moreinfo">
+				<li><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
+				<li><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+			</ul>
+		</div>
+		
+	</li>
+<%
+});
+%>
+</ul>
