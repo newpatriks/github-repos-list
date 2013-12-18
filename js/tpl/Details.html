@@ -19,12 +19,12 @@
 				<%
 				_.each(lang['models'], function(lang_item, i) { 
 				%>
-				<li>
+				<li class="lang_<%=i%>">
 					<h4><%=lang_item['name']%></h4>
-					<span class="number"><%=lang_item['num']%>%</span>
 				</li>
 				<%})%>
 			</ul>
+			
 		</div>
 	</div>
 </div>

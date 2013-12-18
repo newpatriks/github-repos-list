@@ -5,6 +5,7 @@ define(function (require) {
     var $			= require('jquery'),
         _           = require('underscore.min'),
         Backbone    = require('backbone.min'),
+        d3			= require('d3.v3.min'),
         tpl         = require('text!tpl/Details.html'),
         model		= require('app/models/model'),
         template 	= _.template(tpl);    
@@ -59,6 +60,15 @@ define(function (require) {
 					}	
 	        	}).complete(function(resp_lang) {
 		        	that.$el.html(template({repo : repo, lang : lang}));
+		        	
+		        	var elem = "skills_wrapper";
+		        	$('#'+elem).append('<div class="few_stats"><ul></ul></div>');	
+		        	
+		        	
+		        	$.each(lang['models'], function(item, value){
+			        	createAverage(elem, 0, 100, value.num, 'path', item);
+		        	});
+		        	
 	        	});
 	        	
             });

@@ -21,7 +21,7 @@ define(function (require) {
 		
 		initView 	:	function(view) {
 			if (this.currentView) {
-				this.currentView.remove();
+				//this.currentView.remove();
 			}
 			this.currentView = view;
 		},

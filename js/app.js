@@ -10,7 +10,8 @@ require.config({
         'async' 					: 'async',
         'tpl'						: '../tpl'
     },
-    shim: {        
+    shim: {
+    	'd3.v3.min'					: { exports: 'd3' },        
         'bootstrap.min'				: ['jquery', 'scripts'],
         'scripts'					: ['jquery'],
         'jquery.min'				: { exports: '$' },
