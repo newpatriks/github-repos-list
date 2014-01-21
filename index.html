@@ -10,7 +10,6 @@
         
         <link rel="stylesheet" href="css/github.css">
         <link rel="stylesheet" href="css/main.css">
-        <script data-main="js/app" src="js/require.js"></script>
 		
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	    <!--[if lt IE 9]>
@@ -24,4 +23,88 @@
 	    	<div id="main_content"></div>
     	</div>
     </body>
+    
+    <script type="text/template" id="tpl_home">
+    	<ul><%
+		_.each(repos['models'], function(repo, i) { 
+		%>
+			<li class="repo">
+				<div class="repo_content">
+					<a href="#/repo/<%=repo['attributes']['name']%>" class="left repo_name"><%=repo['attributes']['name']%></a>
+					<ul class="right moreinfo">
+						<li><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
+						<li><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+					</ul>
+				</div>
+				
+			</li>
+		<%
+		});
+		%>
+		</ul>
+
+    </script>
+    
+    <script type="text/template" id="tpl_header">
+	    <div class="content_table">
+			<ul class="header_list">
+				<li id="main_title">
+					<span class="mini-icon octocat"></span>
+					Popular repositories</li>
+				<li>
+					<ul class="profile_list">
+						<li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
+						<li><span class="inline"><%=profile['attributes']['name']%></span></li>
+					</ul>
+					
+				</li>
+			</ul>
+		</div>
+	</script>
+	
+	
+	
+	<script type="text/template" id="tpl_details">
+		<div class="separator"></div>
+		<div id="repo">
+			<ul>
+				<li class="left">
+					<h3><%=repo['attributes']['name']%> · </h3>
+					<h6>Last updated <%=repo['attributes']['days_ago']%> days ago</h6>
+				</li>
+				<li class="right"><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
+				<li class="right"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+			</ul>
+			<div class="clean"></div>
+			<p class="description"><%=repo['attributes']['description']%></p>
+			
+			<div id="skills">	
+				<div id="skills_wrapper">
+					<ul>
+						<%
+						_.each(lang['models'], function(lang_item, i) { 
+						%>
+						<li class="lang_<%=i%>">
+							<h4><%=lang_item['name']%></h4>
+						</li>
+						<%})%>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+		<a href="#">Back to list</a>
+	</script>
+    
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="js/lib/scripts.js"></script>
+	
+	<script src="js/app/models/model.js"></script>
+    <script src="js/app/views/Header.js"></script>
+    <script src="js/app/views/Home.js"></script>
+    <script src="js/app/views/Details.js"></script>
+    <script src="js/app/router.js"></script>
 </html>
