@@ -1,8 +1,9 @@
 var viewHome = Backbone.View.extend({
-	el 				: 	$("#main_content"),
-	initialization	:	function() {
-	},
-	render			: 	function () {
+	tagName   :   "div",
+  id        :   "home-list",
+  initialization	:	function() {
+    },
+    render			: 	function () {
 		var that = this;
 		var user = new c_User();
 		user.fetch({
@@ -15,10 +16,11 @@ var viewHome = Backbone.View.extend({
 				collection.sort();
 				collection.reset(collection.first(20));
 			}
-		}).complete(function(resp) {
-			var template = _.template( $("#tpl_home").html(), {repos : user} );
-			that.$el.html(template);
-		});
-		return this;
-	}
+        }).complete(function(resp) {
+        	//that.$el.html(template({repos : user}));
+        	var template = _.template( $("#tpl_home").html(), {repos : user} );
+        	$("#main_content").html(template);
+        });
+        return this;
+    }
 });

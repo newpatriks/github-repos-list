@@ -1,31 +1,28 @@
 var AppRouter = Backbone.Router.extend({
 	routes	: {
-		""				: 	"home",
-		"repo/:id"		:	"details"
+		""			: 	"home",
+		"repo/:id"	:	"details"
 	},
-
 	initialize 	: 	function() {
 		this.currentView = null;
 		var header = new viewHeader({el : "header"});
 		header.render();
 	},
 	
+	home		:	function () {
+		console.log("home");
+		this.initView(new viewHome());
+	},
+	details		: 	function(id) {
+		console.log("details");
+		this.initView(new viewDetails({id : id}));
+	},
 	initView 	:	function(view) {
-		if (this.currentView) {
-			
-		}
+		this.currentView && this.currentView.remove();
 		this.currentView = view;
 		this.currentView.render();
 	},
 	
-	home		:	function () {
-		this.home = new viewHome({el : "#main_content"});
-		this.home.render();
-	},
-	details		: 	function(id) {
-		this.details = new viewDetails({el : "#main_content", id : id});
-		this.details.render();
-	}
 });
 
 var rout = new AppRouter();
