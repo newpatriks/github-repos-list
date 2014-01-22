@@ -1,10 +1,10 @@
 var viewHome = Backbone.View.extend({
 	el 				: 	$("#main_content"),
 	initialization	:	function() {
-    },
-    render			: 	function () {
+	},
+	render			: 	function () {
 		var that = this;
-        var user = new c_User();
+		var user = new c_User();
 		user.fetch({
 			add : true,
 			success: function(collection, response) {
@@ -15,11 +15,10 @@ var viewHome = Backbone.View.extend({
 				collection.sort();
 				collection.reset(collection.first(20));
 			}
-        }).complete(function(resp) {
-        	//that.$el.html(template({repos : user}));
-        	var template = _.template( $("#tpl_home").html(), {repos : user} );
-        	that.$el.html(template);
-        });
-        return this;
-    }
+		}).complete(function(resp) {
+			var template = _.template( $("#tpl_home").html(), {repos : user} );
+			that.$el.html(template);
+		});
+		return this;
+	}
 });

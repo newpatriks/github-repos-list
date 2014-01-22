@@ -1,0 +1,11 @@
+{
+	"framework":"mocha",
+	"src_files": [
+		"lib/jquery.min.js",
+		"lib/underscore-min.js",
+		"lib/backbone-min.js",
+		"app/*"
+		"lib/d3.v3.min.js",
+		
+	]
+}

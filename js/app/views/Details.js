@@ -29,18 +29,18 @@ var viewDetails = Backbone.View.extend({
 					var nums_perc 	= new Array();
 					
 					
-					$.each(response, function(index, value) {
+					_.each(response, function(value,index) {
 					    names.push(index);
 					    nums.push(value);
 					    sum +=value;						    
 					});
 					
-					$.each(nums, function(i, v) {						
+					_.each(nums, function(v, i) {						
 					    nums_perc[i] = (nums[i]*100/sum).toFixed(1);
 					});
 					
 					collection.reset();
-					$.each(nums, function(i, v) {
+					_.each(nums, function(v, i) {
 				    	collection.add(new m_Lang(names[i], (nums[i]*100/sum).toFixed(1)));
 				  	});
 											
@@ -54,7 +54,7 @@ var viewDetails = Backbone.View.extend({
 	        	$('#'+elem).append('<div class="few_stats"><ul></ul></div>');	
 	        	
 	        	
-	        	$.each(lang['models'], function(item, value){
+				_.each(lang['models'], function(value,item){
 		        	createAverage(elem, 0, 100, value.num, 'path', item);
 	        	});
 	        	

@@ -6,13 +6,8 @@ var m_UserDetails = Backbone.Model.extend({
 	}
 });
 
-var m_User = Backbone.Model.extend({
-	
-});
-
 var c_User = Backbone.Collection.extend({
-	url 	: "https://api.github.com/users/mbostock/repos",
-	model 	: m_User
+	url 	: "https://api.github.com/users/mbostock/repos"
 });
 
 var m_Repo = Backbone.Model.extend({
