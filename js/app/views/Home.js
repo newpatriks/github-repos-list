@@ -1,6 +1,7 @@
 var viewHome = Backbone.View.extend({
-	el 				: 	$("#main_content"),
-	initialization	:	function() {
+	tagName   :   "div",
+  id        :   "home-list",
+  initialization	:	function() {
     },
     render			: 	function () {
 		var that = this;
@@ -18,7 +19,7 @@ var viewHome = Backbone.View.extend({
         }).complete(function(resp) {
         	//that.$el.html(template({repos : user}));
         	var template = _.template( $("#tpl_home").html(), {repos : user} );
-        	that.$el.html(template);
+        	$("#main_content").html(template);
         });
         return this;
     }

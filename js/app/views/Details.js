@@ -1,6 +1,7 @@
 var viewDetails = Backbone.View.extend({
-	el 				: 	$("#main_content"),
-	initialization	:	function(id) {
+	tagName         : "div",
+  id              : "details-view",
+  initialization	:	function(id) {
 		this.id = id;
 	},
 	render			: 	function () {
@@ -48,10 +49,10 @@ var viewDetails = Backbone.View.extend({
 				}	
 	    	}).complete(function(resp_lang) {
 	        	var template = _.template( $("#tpl_details").html(), {repo : repo, lang : lang} );
-				that.$el.html(template);
+				    $("#main_content").html(template);
 	        	
 	        	var elem = "skills_wrapper";
-	        	$('#'+elem).append('<div class="few_stats"><ul></ul></div>');	
+	        	$('#main_content').append('<div class="few_stats"><ul></ul></div>');	
 	        	
 	        	
 	        	$.each(lang['models'], function(item, value){
