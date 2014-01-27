@@ -1,12 +1,12 @@
 var viewHome = Backbone.View.extend({
-  tagName   :   "div",
-  id        :   "home-list",
-  initialization	:	function() {
-    },
+	tagName   :   "div",
+	id        :   "home-list",
+	initialize	:	function() {
+		this.user = new c_User();
+	},
     render			: 	function () {
-		var that = this;
-		var user = new c_User();
-		user.fetch({
+		var that = this;		
+		this.user.fetch({
 			add : true,
 			success: function(collection, response) {
 				// Ordering the collection
@@ -17,10 +17,15 @@ var viewHome = Backbone.View.extend({
 				collection.reset(collection.first(20));
 			}
         }).complete(function(resp) {
-        	//that.$el.html(template({repos : user}));
-        	var template = _.template( $("#tpl_home").html(), {repos : user} );
+        	var template = _.template( $("#tpl_home").html());
         	$("#main_content").html(template);
+        	_.each(that.user.models, function(item,i){
+				that.subRender(item, i);
+			});
         });
         return this;
-    }
+    },
+    subRender: function(item, i) {
+		var subview = new viewRepo({el:"#list-repos",info : item}).render();
+	}
 });

@@ -24,28 +24,22 @@
 		</div>
 	</body>
 
-	<script type="text/template" id="tpl_home">
-		<ul><%
-		_.each(repos['models'], function(repo, i) { 
-		%>
+		<script type="text/template" id="tpl_home">
+			<ul id="list-repos">
+			</ul>
+		</script>
+
+		<script type="text/template" id="tpl_repo">
 			<li class="repo">
 				<div class="repo_content">
-					<a href="#/repo/<%=repo['attributes']['name']%>" class="left repo_name"><%=repo['attributes']['name']%></a>
+					<a href="#/repo/<%=repo_info['attributes']['name']%>" class="left repo_name"><%=repo_info['attributes']['name']%></a>
 					<ul class="right moreinfo">
-						<li><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
-						<li><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+						<li><span class="mini-icon watchers"></span><%=repo_info['attributes']['watchers']%></li>
+						<li><span class="mini-icon public-fork"></span><%=repo_info['attributes']['forks']%></li>
 					</ul>
 				</div>
 			</li>
-		<%
-		});
-		%>
-		</ul>
-	</script>
-
-	<script type="text/template" id="tpl_repo">
-			
-	</script>
+		</script>
 
 	<script type="text/template" id="tpl_header">
 		<div class="content_table">
@@ -112,6 +106,7 @@
 
 	<script src="js/app/models/model.js"></script>
 	<script src="js/app/views/Header.js"></script>
+	<script src="js/app/views/Repo.js"></script>
 	<script src="js/app/views/Home.js"></script>
 	<script src="js/app/views/Details.js"></script>
 	<script src="js/app/router.js"></script>
