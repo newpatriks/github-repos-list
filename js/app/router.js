@@ -19,8 +19,7 @@ var AppRouter = Backbone.Router.extend({
 		this.currentView && this.currentView.remove();
 		this.currentView = view;
 		this.currentView.render();
-	},
-	
+	},	
 });
 
 var rout = new AppRouter();

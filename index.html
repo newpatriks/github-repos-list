@@ -24,11 +24,25 @@
     <div id="main_content"></div>
     </div>
   </body>
-
+ 
+  <!--
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  -->
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
+  <script src="js/lib/backbone-min.js"></script>
+  <script src="js/lib/d3.v3.min.js"></script>
+  <script src="js/lib/scripts.js"></script>
+  
   <script type="text/template" id="tpl_home">
-    <ul><%
-    _.each(repos['models'], function(repo, i) { 
-    %>
+    <ul id="list-repos">
+    </ul>
+  </script>
+
+  <script type="text/template" id="tpl_repo">
       <li class="repo">
         <div class="repo_content">
           <a href="#/repo/<%=repo['attributes']['name']%>" class="left repo_name"><%=repo['attributes']['name']%></a>
@@ -38,29 +52,8 @@
           </ul>
         </div>
       </li>
-    <%
-    });
-    %>
-    </ul>
   </script>
 
-  <script type="text/template" id="tpl_repo">
-      
-  </script>
-
-<<<<<<< HEAD
-	<!--
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	-->
-	<script src="js/lib/jquery.min.js"></script>
-	<script src="js/lib/underscore-min.js"></script>
-	<script src="js/lib/backbone-min.js"></script>
-	<script src="js/lib/d3.v3.min.js"></script>
-	<script src="js/lib/scripts.js"></script>
-=======
   <script type="text/template" id="tpl_header">
     <div id="header-wraper">
       <div class="table" id="header-main">
@@ -78,8 +71,6 @@
       </div>
     </div>
   </script>
-  
-  
   
   <script type="text/template" id="tpl_details">
     <div class="separator"></div>
