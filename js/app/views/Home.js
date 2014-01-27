@@ -1,5 +1,5 @@
 var viewHome = Backbone.View.extend({
-	tagName   :   "div",
+  tagName   :   "div",
   id        :   "home-list",
   initialization	:	function() {
     },

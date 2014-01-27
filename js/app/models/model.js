@@ -2,7 +2,11 @@ var m_UserDetails = Backbone.Model.extend({
 	url 	: "https://api.github.com/users/mbostock",
 	default : {
 		login  	: "",
-		avatar 	: ""
+		avatar 	: "",
+		blog	: ""
+	},	
+	getBlog : function() {
+		return this.get('blog');
 	}
 });
 
