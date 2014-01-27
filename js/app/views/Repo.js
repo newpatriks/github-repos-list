@@ -1,12 +1,13 @@
 var viewRepo = Backbone.View.extend({
-	el 				: 	$("#main_content"),
-	initialization	:	function(repo) {
-		this.repo = repo;
-	},
-	render			: 	function () {
-		var that = this;		
-		var template = _.template( $("#tpl_repo").html(), {repos : this.repo} );
-		that.$el.html(template);
-		return this;
-	}
+  tagName   :   "div",
+  initialize: function({el, info , id}) {
+    this.info = info;
+    this.id = "repo_"+id;
+    this.el = el;
+  },
+  render  :   function () {
+    var tpl_repo = _.template( $("#tpl_repo").html(), {repo_info : this.info} );
+    this.$el.append(tpl_repo);
+    return this;
+  }
 });

@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
+    <title>Github repo list</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <link rel="stylesheet" href="css/github.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/styles.css">
-
+    
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -24,53 +23,42 @@
     <div id="main_content"></div>
     </div>
   </body>
- 
-  <!--
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  -->
-  <script src="js/lib/jquery.min.js"></script>
-  <script src="js/lib/underscore-min.js"></script>
-  <script src="js/lib/backbone-min.js"></script>
-  <script src="js/lib/d3.v3.min.js"></script>
-  <script src="js/lib/scripts.js"></script>
-  
-  <script type="text/template" id="tpl_home">
-    <ul id="list-repos">
-    </ul>
-  </script>
 
-  <script type="text/template" id="tpl_repo">
+    <script type="text/template" id="tpl_home">
+      <ul id="list-repos">
+      </ul>
+    </script>
+
+    <script type="text/template" id="tpl_repo">
       <li class="repo">
         <div class="repo_content">
-          <a href="#/repo/<%=repo['attributes']['name']%>" class="left repo_name"><%=repo['attributes']['name']%></a>
+          <a href="#/repo/<%=repo_info['attributes']['name']%>" class="left repo_name"><%=repo_info['attributes']['name']%></a>
           <ul class="right moreinfo">
-            <li><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
-            <li><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+            <li><span class="mini-icon watchers"></span><%=repo_info['attributes']['watchers']%></li>
+            <li><span class="mini-icon public-fork"></span><%=repo_info['attributes']['forks']%></li>
           </ul>
         </div>
       </li>
-  </script>
+    </script>
 
   <script type="text/template" id="tpl_header">
-    <div id="header-wraper">
-      <div class="table" id="header-main">
-        <ul>
-          <li id="" class="header-item">
-            <span class="mini-icon octocat"></span>
-            Popular repositories</li>
-          <li class="header-item">
-            <ul id="header-profile">
-              <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
-              <li><span class="inline"><%=profile['attributes']['name']%></span></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+    <div class="content_table">
+      <ul class="header_list">
+        <li id="main_title">
+          <span class="mini-icon octocat"></span>
+          Popular repositories</li>
+        <li>
+          <ul class="profile_list">
+            <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
+            <li><span class="inline"><%=profile['attributes']['name']%></span></li>
+          </ul>
+          
+        </li>
+      </ul>
     </div>
   </script>
+  
+  
   
   <script type="text/template" id="tpl_details">
     <div class="separator"></div>
@@ -103,4 +91,23 @@
     </div>
     <a href="#">Back to list</a>
   </script>
+
+  <!--
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> 
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  -->
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/underscore-min.js"></script>
+  <script src="js/lib/backbone-min.js"></script>
+  <script src="js/lib/d3.v3.min.js"></script>
+  <script src="js/lib/scripts.js"></script>
+
+  <script src="js/app/models/model.js"></script>
+  <script src="js/app/views/Header.js"></script>
+  <script src="js/app/views/Repo.js"></script>
+  <script src="js/app/views/Home.js"></script>
+  <script src="js/app/views/Details.js"></script>
+  <script src="js/app/router.js"></script>
 </html>
