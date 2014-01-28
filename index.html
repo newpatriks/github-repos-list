@@ -9,7 +9,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <link rel="stylesheet" href="css/github.css">
+    <!--
     <link rel="stylesheet" href="css/main.css">
+    -->
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -32,8 +35,8 @@
     <script type="text/template" id="tpl_repo">
       <li class="repo">
         <div class="repo_content">
-          <a href="#/repo/<%=repo_info['attributes']['name']%>" class="left repo_name"><%=repo_info['attributes']['name']%></a>
-          <ul class="right moreinfo">
+          <a href="#/repo/<%=repo_info['attributes']['name']%>" class="repo_name"><%=repo_info['attributes']['name']%></a>
+          <ul class="moreinfo">
             <li><span class="mini-icon watchers"></span><%=repo_info['attributes']['watchers']%></li>
             <li><span class="mini-icon public-fork"></span><%=repo_info['attributes']['forks']%></li>
           </ul>
@@ -42,19 +45,20 @@
     </script>
 
   <script type="text/template" id="tpl_header">
-    <div class="content_table">
-      <ul class="header_list">
-        <li id="main_title">
-          <span class="mini-icon octocat"></span>
-          Popular repositories</li>
-        <li>
-          <ul class="profile_list">
-            <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
-            <li><span class="inline"><%=profile['attributes']['name']%></span></li>
-          </ul>
-          
-        </li>
-      </ul>
+    <div id="header-wraper">
+      <div id="header-main">
+        <ul>
+          <li class="header-item">
+            <span class="mini-icon octocat"></span>
+            Popular repositories</li>
+          <li class="header-item">
+            <ul id="header-profile">
+              <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
+              <li><span class="inline"><%=profile['attributes']['name']%></span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </script>
   
@@ -68,10 +72,9 @@
           <h3><%=repo['attributes']['name']%> · </h3>
           <h6>Last updated <%=repo['attributes']['days_ago']%> days ago</h6>
         </li>
-        <li class="right"><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
-        <li class="right"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
-      </ul>
-      <div class="clean"></div>
+        <li class="right icons"><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
+        <li class="right icons"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+      </ul>      
       <p class="description"><%=repo['attributes']['description']%></p>
       
       <div id="skills"> 

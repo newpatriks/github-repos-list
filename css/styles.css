@@ -3,6 +3,7 @@ body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
+  background-color: #bdc3c7;
 }
 body,
 h1,
@@ -40,33 +41,116 @@ li {
 }
 #header-wraper {
   width: 100%;
-  height: 80px;
-  background-color: #bad988;
+  height: 60px;
+  background-color: #677c91;
 }
 #header-main {
-  background-color: #87a655;
+  background-color: #34495e;
   color: #fff;
   vertical-align: middle;
 }
 #header-main ul {
-  height: 80px;
+  height: 60px;
+  width: 95%;
+  margin: 0 auto;
+  display: table;
 }
 #header-main .header-item {
   display: table-cell;
   vertical-align: middle;
   width: 300px;
 }
+ul#header-profile {
+  display: table;
+  width: 100%;
+  text-align: right;
+}
 ul#header-profile li {
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 10px;
 }
 ul#header-profile li img {
-  width: 50px;
+  width: 48px;
+  border-radius: 40px;
+}
+ul#header-profile li:nth-child(2) {
+  width: 30px;
 }
 #header-main,
 #main-content {
   min-width: 300px;
   width: 80%;
-  max-width: 600px;
   margin: 0 auto;
   height: 100%;
+}
+#main_content {
+  width: 80%;
+  margin: 0 auto;
+}
+#list-repos .repo {
+  padding: 5px 10px;
+  background-color: #dfe5e9;
+  color: #686e72;
+  display: block;
+  clear: both;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+.repo_content {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+.repo_name {
+  display: table-cell;
+  width: 75%;
+}
+.moreinfo {
+  display: table-cell;
+  float: right;
+}
+.moreinfo li {
+  float: left;
+  margin: 0px 5px;
+}
+#repo {
+  padding: 10px;
+  background-color: #dfe5e9;
+}
+#repo h3 {
+  display: inline;
+}
+#repo h6 {
+  display: inline;
+}
+#repo ul {
+  position: relative;
+  height: 25px;
+  margin-bottom: 5px;
+}
+#repo ul li.icons {
+  margin: 0px 5px;
+}
+#repo #skills {
+  margin: 20px 0px;
+}
+/******/
+#skills_wrapper {
+  display: table;
+  width: 100%;
+}
+#skills_wrapper ul {
+  display: table-row;
+  width: 100%;
+}
+#skills_wrapper ul li {
+  display: table-cell;
+  text-align: center;
+}
+p.description {
+  border-top: 1px dashed #677c91;
+  clear: both;
+  margin-top: 10px;
+  padding-top: 8px;
+  position: relative;
 }

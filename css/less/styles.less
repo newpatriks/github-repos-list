@@ -1,14 +1,15 @@
-@primaryColor : #87A655;
-@txtColor     : #5B5B46;
+@backColor    : #bdc3c7;
+@headerColor  : #34495e;
 @baseFontSize : 15px;
 @fontFamily   : 'Open Sans', sans-serif;
-@headerHeight : 80px;
+@headerHeight : 60px;
 @headerMaxWidth:600px;
 
 html,body {
   height:100%;
   font-family:@fontFamily;
   font-size:@baseFontSize;
+  background-color:@backColor;
 }
 
 body, h1, h2, h3, h4, h5, h6, ul, p {margin:0px;padding:0px;}
@@ -23,35 +24,76 @@ li{list-style:none;}
 #header-wraper {
   width:100%;
   height:@headerHeight;
-  background-color:@primaryColor + #333;
+  background-color:@headerColor + #333;
 }
 
-
 #header-main   {
-  background-color:@primaryColor;
+  background-color:@headerColor;
   color:#fff;
   vertical-align:middle;
 }
-#header-main ul {height:@headerHeight;}
+#header-main ul {height:@headerHeight;width:95%;margin:0 auto;display:table;}
 #header-main .header-item {display:table-cell;vertical-align:middle;width:@headerMaxWidth / 2;}
-ul#header-profile{}
-ul#header-profile li{float:left;}
-ul#header-profile li img{width:50px;}
-
+ul#header-profile{display:table;width:100%;text-align:right;}
+ul#header-profile li{display:table-cell;vertical-align:middle;padding:0px 10px;}
+ul#header-profile li img{width:48px;border-radius:40px;}
+ul#header-profile li:nth-child(2) {width:30px;}
 
 
 #header-main,
 #main-content {
   min-width:300px;
   width: 80%;
-  max-width:600px;
   margin:0 auto;
   height:100%;
 }
 
-
-
 #main_content {
+  width:80%;
+  margin:0 auto;
+}
+
+ul#list-repos {
   
 }
 
+#list-repos .repo {
+  padding:5px 10px;
+  background-color: @backColor + #222;
+  color: @backColor - #555;
+  display:block;
+  clear:both;
+  border-bottom:1px dashed rgba(255, 255, 255, 0.40);
+}
+
+
+.repo_content {
+	position:relative;
+	display:table;
+	width:100%;
+}
+.repo_name {
+	display:table-cell;
+	width:75%;
+}
+.moreinfo {display:table-cell;float:right;}
+.moreinfo li {float:left;margin:0px 5px;}
+
+
+#repo {padding:10px;background-color: @backColor + #222;}
+#repo h3 {display:inline;}
+#repo h6 {display:inline;}
+#repo ul {position:relative;height:25px;margin-bottom:5px;}
+#repo ul li.icons{margin:0px 5px;}
+#repo #skills {margin:20px 0px;}
+
+/******/
+#skills_wrapper {display:table;width:100%;}
+#skills_wrapper ul {display:table-row;width:100%;}
+#skills_wrapper ul li {display:table-cell;text-align:center;}
+p.description {
+	border-top: 1px dashed @headerColor + #333;
+    clear: both;
+    margin-top: 10px;
+    padding-top: 8px;
+    position: relative;}
