@@ -1,13 +1,15 @@
 var viewDetails = Backbone.View.extend({
   tagName         : "div",
   id              : "details-view",
-  initialization  : function(id) {
+  initialize  : function({id}) {
+    console.log(id);
     this.id = id;
+    this.repo = new m_Repo(id);
   },
   render      :   function () {
     var that = this;
-    var repo = new m_Repo(this.id);
-    repo.fetch({
+    
+    this.repo.fetch({
       add : true,
       success: function(model, response) {
         var date    = new Date((model.get('updated_at') || "").replace(/-/g,"/").replace(/[TZ]/g," "));
@@ -40,7 +42,7 @@ var viewDetails = Backbone.View.extend({
           });
         }
       }).complete(function(resp_lang) {
-        var template = _.template( $("#tpl_details").html(), {repo : repo, lang : lang} );
+        var template = _.template( $("#tpl_details").html(), {repo : that.repo, lang : lang} );
         $("#main_content").html(template);
         var elem = "skills_wrapper";
         $('#main_content').append('<div class="few_stats"><ul></ul></div>');

@@ -9,6 +9,7 @@ html,body {
   height:100%;
   font-family:@fontFamily;
   font-size:@baseFontSize;
+  font-weight:100;
   background-color:@backColor;
 }
 
@@ -54,18 +55,17 @@ ul#header-profile li:nth-child(2) {width:30px;}
 }
 
 ul#list-repos {
-  
+  background-color: @backColor + #222;
 }
 
 #list-repos .repo {
-  padding:5px 10px;
-  background-color: @backColor + #222;
+  padding:5px 10px;  
   color: @backColor - #555;
   display:block;
   clear:both;
   border-bottom:1px dashed rgba(255, 255, 255, 0.40);
 }
-
+.repo:hover{background-color:@backColor + #333;}
 
 .repo_content {
 	position:relative;
@@ -82,18 +82,23 @@ ul#list-repos {
 
 #repo {padding:10px;background-color: @backColor + #222;}
 #repo h3 {display:inline;}
-#repo h6 {display:inline;}
+#repo h6 {display:inline;font-weight:100;}
 #repo ul {position:relative;height:25px;margin-bottom:5px;}
 #repo ul li.icons{margin:0px 5px;}
 #repo #skills {margin:20px 0px;}
 
-/******/
+
 #skills_wrapper {display:table;width:100%;}
 #skills_wrapper ul {display:table-row;width:100%;}
 #skills_wrapper ul li {display:table-cell;text-align:center;}
+#skills_wrapper h4{font-size:25px;font-weight:100;}
 p.description {
-	border-top: 1px dashed @headerColor + #333;
-    clear: both;
-    margin-top: 10px;
-    padding-top: 8px;
-    position: relative;}
+  border-top: 1px dashed @headerColor + #333;
+  clear: both;
+  margin-top: 10px;
+  padding-top: 8px;
+  position: relative;
+}
+
+path.path_back  {fill:@headerColor + #555;}
+path.path_front {fill:@headerColor;}

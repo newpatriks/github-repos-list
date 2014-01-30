@@ -3,6 +3,7 @@ body {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
+  font-weight: 100;
   background-color: #bdc3c7;
 }
 body,
@@ -88,13 +89,18 @@ ul#header-profile li:nth-child(2) {
   width: 80%;
   margin: 0 auto;
 }
+ul#list-repos {
+  background-color: #dfe5e9;
+}
 #list-repos .repo {
   padding: 5px 10px;
-  background-color: #dfe5e9;
   color: #686e72;
   display: block;
   clear: both;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+.repo:hover {
+  background-color: #f0f6fa;
 }
 .repo_content {
   position: relative;
@@ -122,6 +128,7 @@ ul#header-profile li:nth-child(2) {
 }
 #repo h6 {
   display: inline;
+  font-weight: 100;
 }
 #repo ul {
   position: relative;
@@ -134,7 +141,6 @@ ul#header-profile li:nth-child(2) {
 #repo #skills {
   margin: 20px 0px;
 }
-/******/
 #skills_wrapper {
   display: table;
   width: 100%;
@@ -147,10 +153,20 @@ ul#header-profile li:nth-child(2) {
   display: table-cell;
   text-align: center;
 }
+#skills_wrapper h4 {
+  font-size: 25px;
+  font-weight: 100;
+}
 p.description {
   border-top: 1px dashed #677c91;
   clear: both;
   margin-top: 10px;
   padding-top: 8px;
   position: relative;
+}
+path.path_back {
+  fill: #899eb3;
+}
+path.path_front {
+  fill: #34495e;
 }

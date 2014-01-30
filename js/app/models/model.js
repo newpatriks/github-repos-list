@@ -6,11 +6,13 @@ var m_UserDetails = Backbone.Model.extend({
     login   : "",
     avatar  : "",
     blog  : ""
-  },  
+  },
   getBlog : function() {
     return this.get('blog');
   }
 });
+
+
 
 var c_User = Backbone.Collection.extend({
   url   : "https://api.github.com/users/mbostock/repos" + addingSecretIDURL
