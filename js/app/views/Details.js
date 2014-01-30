@@ -8,7 +8,6 @@ var viewDetails = Backbone.View.extend({
   },
   render      :   function () {
     var that = this;
-    
     this.repo.fetch({
       add : true,
       success: function(model, response) {
@@ -16,7 +15,6 @@ var viewDetails = Backbone.View.extend({
         var today     = new Date();
         var millis_day  = 86400000;
         var days = ((today.getTime() - date.getTime()) / millis_day).toFixed(0);
-        // Settings the new attribute of the model, days_ago
         model.set('days_ago', days);
       }
     }).complete(function(resp_repo) {

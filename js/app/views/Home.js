@@ -9,7 +9,6 @@ var viewHome = Backbone.View.extend({
     this.user.fetch({
       add : true,
       success: function(collection, response) {
-        // Ordering the collection
         collection.comparator = function(model) {
           return -model.get('watchers');
         }

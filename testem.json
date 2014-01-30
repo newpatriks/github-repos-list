@@ -1,15 +1,15 @@
 {
-	"framework": "mocha",
-	"src_files": [
-		"js/lib/jquery.min.js",
-		"js/lib/underscore-min.js",
-		"js/lib/backbone-min.js",
-		"js/app/models/*.js",
-		"js/app/views/*.js",
-		"js/app/router.js",
-		"js/lib/chai.js",
-		"js/lib/sinon-chai.js",
-		"js/lib/sinon-1.7.3.js",
-		"test/*.js"
-	]
+  "framework": "mocha",
+  "src_files": [
+    "js/lib/jquery.min.js",
+    "js/lib/underscore-min.js",
+    "js/lib/backbone-min.js",
+    "js/app/models/*.js",
+    "js/app/views/*.js",
+    "js/app/router.js",
+    "js/lib/chai.js",
+    "js/lib/sinon-chai.js",
+    "js/lib/sinon-1.7.3.js",
+    "test/*.js"
+  ]
 }

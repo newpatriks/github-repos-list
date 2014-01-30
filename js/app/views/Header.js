@@ -4,7 +4,7 @@ var viewHeader = Backbone.View.extend({
     this.user = new m_UserDetails();
   },
   render      :   function () {
-    var that = this;    
+    var that = this;
     this.user.fetch({
       add : false,
       success: function(model, response) {
