@@ -1,8 +1,7 @@
-var viewDetails = Backbone.View.extend({
-  tagName         : "div",
-  id              : "details-view",
+var DetailsView = Backbone.View.extend({
+  id          : "details-view",
+  template    :  _.template( $("#tpl_details").html() ),
   initialize  : function({id}) {
-    console.log(id);
     this.id = id;
     this.repo = new m_Repo(id);
   },
@@ -39,11 +38,10 @@ var viewDetails = Backbone.View.extend({
             collection.add(new m_Lang(names[i], (nums[i]*100/sum).toFixed(1)));
           });
         }
-      }).complete(function(resp_lang) {
-        var template = _.template( $("#tpl_details").html(), {repo : that.repo, lang : lang} );
-        $("#main_content").html(template);
+      }).complete(function(resp_lang) {        
+        $(that.el).html(that.template({repo : that.repo, lang : lang}));
         var elem = "skills_wrapper";
-        $('#main_content').append('<div class="few_stats"><ul></ul></div>');
+        $(that.el).append('<div class="few_stats"><ul></ul></div>');
         _.each(lang['models'], function(value,item){
           createAverage(elem, 0, 100, value.num, 'path', item);
         });

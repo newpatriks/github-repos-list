@@ -1,5 +1,5 @@
-var viewHeader = Backbone.View.extend({
-  el        :   $("header"),
+var HeaderView = Backbone.View.extend({
+  template    : _.template( $("#tpl_header").html() ),
   initialize  : function() {
     this.user = new m_UserDetails();
   },
@@ -11,9 +11,8 @@ var viewHeader = Backbone.View.extend({
         model.set("login",response['name'])
         model.set('avatar', response['avatar_url']);
       }
-    }).complete(function(resp_repo) {
-      var template = _.template( $("#tpl_header").html(), {profile : that.user} );
-      that.$el.html(template);
+    }).complete(function(resp_repo) {      
+      that.$el.html(that.template({profile : that.user}));
     });
     return this;
   }

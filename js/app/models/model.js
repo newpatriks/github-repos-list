@@ -12,10 +12,11 @@ var m_UserDetails = Backbone.Model.extend({
   }
 });
 
-
-
 var c_User = Backbone.Collection.extend({
-  url   : "https://api.github.com/users/mbostock/repos" + addingSecretIDURL
+  url   : "https://api.github.com/users/mbostock/repos" + addingSecretIDURL,
+  comparator: function (model) {     
+    return -(model.get('watchers')); 
+  }
 });
 
 var m_Repo = Backbone.Model.extend({
