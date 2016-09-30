@@ -1,4 +1,4 @@
-var viewDetails = Backbone.View.extend({
+var DetailsView = Backbone.View.extend({
   tagName         : "div",
   id              : "details-view",
   initialize  : function({id}) {

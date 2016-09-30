@@ -46,7 +46,14 @@
         <ul>
           <li class="header-item">
             <span class="mini-icon octocat"></span>
-            Popular repositories</li>
+            Popular repositories
+          </li>
+          <li class="header-item">
+            <!-- <form name="form-search" id="form-search" method="post" action="">
+              <input type="search" name="search" id="search" placeholder="User's repo" />
+              <input type="submit" id="submit-form" value="Search" />
+            </form> -->
+          </li>
           <li class="header-item">
             <ul id="header-profile">
               <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
@@ -57,9 +64,9 @@
       </div>
     </div>
   </script>
-  
-  
-  
+
+
+
   <script type="text/template" id="tpl_details">
     <div class="separator"></div>
     <div id="repo">
@@ -72,11 +79,11 @@
         <li class="right icons"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
       </ul>
       <p class="description"><%=repo['attributes']['description']%></p>
-      <div id="skills"> 
+      <div id="skills">
         <div id="skills_wrapper">
           <ul>
             <%
-            _.each(lang['models'], function(lang_item, i) { 
+            _.each(lang['models'], function(lang_item, i) {
             %>
             <li class="lang_<%=i%>">
               <h4><%=lang_item['name']%></h4>
@@ -99,5 +106,5 @@
   <script src="js/app/views/Repo.js"></script>
   <script src="js/app/views/Home.js"></script>
   <script src="js/app/views/Details.js"></script>
-  <script src="js/app/router.js"></script>  
+  <script src="js/app/router.js"></script>
 </html>

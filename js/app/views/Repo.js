@@ -1,4 +1,4 @@
-var viewRepo = Backbone.View.extend({
+var RepoView = Backbone.View.extend({
   tagName   :   "div",
   initialize: function({el, info , id}) {
     this.info = info;

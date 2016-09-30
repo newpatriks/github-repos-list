@@ -1,4 +1,4 @@
-var viewHome = Backbone.View.extend({
+var HomeView = Backbone.View.extend({
   tagName   :   "div",
   id        :   "home-list",
   initialize  : function() {
@@ -25,6 +25,9 @@ var viewHome = Backbone.View.extend({
     return this;
   },
   subRender: function(item, i) {
-    var subview = new viewRepo({el:"#list-repos",info : item}).render();
+    var subview = new RepoView({el:"#list-repos",info : item}).render();
+  },
+  getGlobalTechnologies : function() {
+
   }
 });

@@ -1,7 +1,10 @@
-var viewHeader = Backbone.View.extend({
+var HeaderView = Backbone.View.extend({
   el        :   $("header"),
   initialize  : function() {
     this.user = new m_UserDetails();
+  },
+  events : {
+    "click #submit-form" : "searchUser"
   },
   render      :   function () {
     var that = this;
@@ -17,4 +20,12 @@ var viewHeader = Backbone.View.extend({
     });
     return this;
   }
+  // Implementation for the search feature (INCOMPLETE)
+  //  ,
+  // searchUser : function(e) {
+  //   e.preventDefault();
+  //   var search = new c_search($(e.target).parent().find('#search').val());
+  //   search.fetch();
+  //   (search.get('total_count') > 0) ?
+  // }
 });

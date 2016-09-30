@@ -47,3 +47,13 @@ var c_Lang = Backbone.Collection.extend({
     this.id = id;
   }
 });
+
+
+var c_search = Backbone.Model.extend({
+  url : function() {
+    return "https://api.github.com/search/users?q="+this.q;
+  },
+  initialize : function(q){
+    this.q = q;
+  }
+});
