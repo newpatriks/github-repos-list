@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Github repo list</title>
@@ -8,103 +8,103 @@
     <meta name="viewport" content="width=device-width">
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <link rel="stylesheet" href="css/github.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/github.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
+</head>
+<body>
     <header></header>
     <div id="main">
-    <div id="main_content"></div>
+        <div id="main_content"></div>
     </div>
-  </body>
+</body>
 
-    <script type="text/template" id="tpl_home">
-      <ul id="list-repos">
-      </ul>
-    </script>
+<script type="text/template" id="tpl_home">
+    <ul id="list-repos">
+    </ul>
+</script>
 
-    <script type="text/template" id="tpl_repo">
-      <li class="repo">
+<script type="text/template" id="tpl_repo">
+    <li class="repo">
         <div class="repo_content">
-          <a href="#/repo/<%=repo_info['attributes']['name']%>" class="repo_name"><%=repo_info['attributes']['name']%></a>
-          <ul class="moreinfo">
-            <li><span class="mini-icon watchers"></span><%=repo_info['attributes']['watchers']%></li>
-            <li><span class="mini-icon public-fork"></span><%=repo_info['attributes']['forks']%></li>
-          </ul>
-        </div>
-      </li>
-    </script>
-
-  <script type="text/template" id="tpl_header">
-    <div id="header-wraper">
-      <div id="header-main">
-        <ul>
-          <li class="header-item">
-            <span class="mini-icon octocat"></span>
-            Popular repositories
-          </li>
-          <li class="header-item">
-            <!-- <form name="form-search" id="form-search" method="post" action="">
-              <input type="search" name="search" id="search" placeholder="User's repo" />
-              <input type="submit" id="submit-form" value="Search" />
-            </form> -->
-          </li>
-          <li class="header-item">
-            <ul id="header-profile">
-              <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
-              <li><span class="inline"><%=profile['attributes']['name']%></span></li>
+            <a href="#/repo/<%=repo_info['attributes']['name']%>" class="repo_name"><%=repo_info['attributes']['name']%></a>
+            <ul class="moreinfo">
+                <li><span class="mini-icon watchers"></span><%=repo_info['attributes']['watchers']%></li>
+                <li><span class="mini-icon public-fork"></span><%=repo_info['attributes']['forks']%></li>
             </ul>
-          </li>
+        </div>
+    </li>
+</script>
+
+<script type="text/template" id="tpl_header">
+    <div id="header-wraper">
+        <div id="header-main">
+            <ul>
+                <li class="header-item">
+                    <span class="mini-icon octocat"></span>
+                    Popular repositories
+                </li>
+                <li class="header-item">
+                    <!-- <form name="form-search" id="form-search" method="post" action="">
+                    <input type="search" name="search" id="search" placeholder="User's repo" />
+                    <input type="submit" id="submit-form" value="Search" />
+                </form> -->
+            </li>
+            <li class="header-item">
+                <ul id="header-profile">
+                    <li><img src="<%=profile['attributes']['avatar']%>" id="avatar" /></li>
+                    <li><span class="inline"><%=profile['attributes']['name']%></span></li>
+                </ul>
+            </li>
         </ul>
-      </div>
     </div>
-  </script>
+</div>
+</script>
 
 
 
-  <script type="text/template" id="tpl_details">
+<script type="text/template" id="tpl_details">
     <div class="separator"></div>
     <div id="repo">
-      <ul>
-        <li class="left">
-          <h3><%=repo['attributes']['name']%> · </h3>
-          <h6>Last updated <%=repo['attributes']['days_ago']%> days ago</h6>
-        </li>
-        <li class="right icons"><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
-        <li class="right icons"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
-      </ul>
-      <p class="description"><%=repo['attributes']['description']%></p>
-      <div id="skills">
-        <div id="skills_wrapper">
-          <ul>
-            <%
-            _.each(lang['models'], function(lang_item, i) {
-            %>
-            <li class="lang_<%=i%>">
-              <h4><%=lang_item['name']%></h4>
+        <ul>
+            <li class="left">
+                <h3><%=repo['attributes']['name']%> · </h3>
+                <h6>Last updated <%=repo['attributes']['days_ago']%> days ago</h6>
             </li>
-            <%})%>
-          </ul>
+            <li class="right icons"><span class="mini-icon watchers"></span><%=repo['attributes']['watchers']%></li>
+            <li class="right icons"><span class="mini-icon public-fork"></span><%=repo['attributes']['forks']%></li>
+        </ul>
+        <p class="description"><%=repo['attributes']['description']%></p>
+        <div id="skills">
+            <div id="skills_wrapper">
+                <ul>
+                    <%
+                    _.each(lang['models'], function(lang_item, i) {
+                        %>
+                        <li class="lang_<%=i%>">
+                            <h4><%=lang_item['name']%></h4>
+                        </li>
+                        <%})%>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <a href="#">Back to list</a>
-  </script>
-  <script src="js/lib/jquery.min.js"></script>
-  <script src="js/lib/underscore-min.js"></script>
-  <script src="js/lib/backbone-min.js"></script>
-  <script src="js/lib/d3.v3.min.js"></script>
-  <script src="js/lib/scripts.js"></script>
+        <a href="#">Back to list</a>
+    </script>
+    <script src="assets/js/lib/jquery.min.js"></script>
+    <script src="assets/js/lib/underscore-min.js"></script>
+    <script src="assets/js/lib/backbone-min.js"></script>
+    <script src="assets/js/lib/d3.v3.min.js"></script>
+    <script src="assets/js/lib/scripts.js"></script>
 
-  <script src="js/app/models/model.js"></script>
-  <script src="js/app/views/Header.js"></script>
-  <script src="js/app/views/Repo.js"></script>
-  <script src="js/app/views/Home.js"></script>
-  <script src="js/app/views/Details.js"></script>
-  <script src="js/app/router.js"></script>
-</html>
+    <script src="js/app/models/model.js"></script>
+    <script src="js/app/views/Header.js"></script>
+    <script src="js/app/views/Repo.js"></script>
+    <script src="js/app/views/Home.js"></script>
+    <script src="js/app/views/Details.js"></script>
+    <script src="js/app/router.js"></script>
+    </html>
